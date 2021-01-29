@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Origami Tutorials</title>
+	<link rel="stylesheet" href="../CSS files/origami modern.css"><link>
+	<link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	
+</head>
+<body>
+
+
+	<div class = "section">
+		<img src = "../Other Images/logo.png" onClick = "location.href = 'Origami Website modern.html';" align = "left" class = "image">
+		<div class="dropdown">
+		<span>Themes</span>
+		<div class="dropdown-content">
+			<a href = "Origami Website modern.html" class = "dropdown-inner">Light</a>
+			<br>
+			<a href = "Origami Website dark.html" class = "dropdown-inner">Dark</a>
+			<br>
+			<a href = "Origami Website cheer.html" class = "dropdown-inner">Color</a>
+			<br>
+		</div>
+		</div>
+		<a href = "tutorials modern.html" class = "button">Tutorials</a>
+		<a href = "editor tutorials modern.html" class = "button">Editor's Tutorials</a>
+		<a href = "ack modern.html" class = "button">Acknowledgements</a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class = "header" id = "h"></div>
+	
+	<h3 class = "bodyLeft">Video tutorials for this website are provided by the YouTube creator "Jo Nakashima - Origami Tutorials". 
+	<br>
+	<br>
+	The following link is the creator's YouTube channel:
+	<br>
+	<br>
+	https://www.youtube.com/channel/UC3ICcukYYeSn26KlCRnhOhA </h3>	
+	<br>
+	<br>
+	<br>
+	<h3 class = "bodyLeft">Image tutorials for this website have been accessed through various websites. 
+	<br>
+	<br>
+	Disclaimer: No tutorials on this website are original. All tutorials have been accessed through various online websites.
+	</h3>
+	
+	
+
+	<script>
+	var i = 0;
+	var text ="Website Acknowledgements"
+	var speed = 100;
+	
+	function type()
+	{
+		if(i < text.length)
+		{
+			h.innerHTML += text.charAt(i);
+			i++
+		    setTimeout(type, speed);	
+		}
+	}
+	
+	type();
+	</script>	
+</body>
+</html>
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Origami Website</title>
+	<link rel="stylesheet" href="../CSS files/origami dark.css"><link>
+	<link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	
+</head>
+<body>
+
+
+	<div class = "section">
+		<img src = "../Other Images/logo.png" onClick = "location.href = 'Origami Website dark.html';" align = "left" class = "image">
+		<div class="dropdown">
+		<span>Themes</span>
+		<div class="dropdown-content">
+			<a href = "Origami Website modern.html" class = "dropdown-inner">Light</a>
+			<br>
+			<a href = "Origami Website dark.html" class = "dropdown-inner">Dark</a>
+			<br>
+			<a href = "Origami Website cheer.html" class = "dropdown-inner">Color</a>
+			<br>
+		</div>
+		</div>
+		<a href = "tutorials dark.html" class = "button">Tutorials</a>
+		<a href = "editor tutorials dark.html" class = "button">Image Tutorials</a>
+		<a href = "ack dark.html" class = "button">Acknowledgements</a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class = "header" id = "h">	  
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	
+	<div class = "textBox">
+		<input placeholder = "Search For a Tutorial" id = "textbox" ></input>
+		<button class = "button2 " onClick = "search()"><img src = "../Other Images/search.png" width = "15" Height = "15"></button>
+		<br>
+		<br>
+		<button class = "button3" onClick = "showAll()" >Show All</button>
+	</div>
+	<br>
+	<br>
+	<br>
+	
+	<h2 id = "message" class = "message"></h2>
+	
+	<div id = "tutorialContainer">
+	
+	</div>
+	
+	<script>
+	var i = 0;
+	var text = "Image Tutorials"
+	var speed = 75;
+	var objList = [];
+	window.addEventListener("keydown", keydown)
+
+	function type()
+	{
+		if(i < text.length)
+		{
+			h.innerHTML += text.charAt(i);
+			i++;
+		    setTimeout(type, speed);	
+		}
+
+	}
+	type()
+	
+	function tutorial(src, name)
+	{
+		this.src = src;
+		this.enlarged = false;
+		this.name = name;
+		this.print = function()
+		{
+			tutorialContainer.innerHTML += '<img id = "'+ name +'" class = "tutorialImg" src = "'+ this.src +'" style = "width:40%;"onclick = "enlarge()" >'
+		}
+	}
+	
+	objList[0] = new tutorial("../Image Tutorials/airplane instructions.png", "airplane")
+	objList[1] = new tutorial("../Image Tutorials/tadpole instructions.png", "tadpole")
+	objList[2] = new tutorial("../Image Tutorials/turtle instructions.png", "turtle")
+	objList[3] = new tutorial("../Image Tutorials/koala instructions.png", "koala")
+	objList[4] = new tutorial("../Image Tutorials/penguin instructions.png", "penguin")
+	objList[5] = new tutorial("../Image Tutorials/camel instructions.png", "camel")
+	objList[6] = new tutorial("../Image Tutorials/fox instructions.png", "fox")
+	objList[7] = new tutorial("../Image Tutorials/shark instructions.png", "shark")
+	
+	function search()
+	{
+		tutorialContainer.innerHTML = "";
+		bool = false;
+		var a = textbox.value;
+		message.innerHTML = 'Showing results for "' + a + '":';
+		for(i=0;i<objList.length;i++)
+		{
+			var name = objList[i].name;
+			for (var j=0;j<=name.length - a.length; j++)
+			{
+				var s = ""
+				if(j+a.length >= name.length)
+                    s = name.substring(j);
+                else
+                    s = name.substring(j, j + a.length);
+                if(a.toLowerCase() == s)
+				{
+					objList[i].print();
+					j = name.length;
+				}
+			}
+		}
+	}
+	
+	function showAll()
+	{
+		message.innerHTML = "Showing all tutorials:";
+		tutorialContainer.innerHTML = "";
+		for(i=0;i<objList.length;i++)
+		{
+			objList[i].print();
+		}
+	}
+	
+	function keydown(evt)
+	{
+		switch(evt.keyCode)
+		{
+			case 13:	 
+				search();
+				break;
+		}
+	}
+	
+	
+	</script>	
+</body>
+</html>

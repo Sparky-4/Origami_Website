@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Origami Website</title>
+	<link rel="stylesheet" href="../CSS files/origami modern.css" id = "theme" ><link>
+	<link href='https://fonts.googleapis.com/css?family=Alegreya Sans' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+	
+</head>
+<body>
+
+
+	<div class = "section">
+		<img src = "../Other Images/logo.png" onClick = "location.href = 'Origami Website modern.html';" align = "left" class = "image">
+		<div class="dropdown">
+		<span>Themes</span>
+		<div class="dropdown-content">
+			<a href = "Origami Website modern.html" class = "dropdown-inner">Light</a>
+			<br>
+			<a href = "Origami Website dark.html" class = "dropdown-inner">Dark</a>
+			<br>
+			<a href = "Origami Website cheer.html" class = "dropdown-inner">Color</a>
+			<br>
+		</div>
+		</div>
+		<a href = "tutorials modern.html" class = "button">Tutorials</a>
+		<a href = "editor tutorials modern.html" class = "button">Image Tutorials</a>
+		<a href = "ack modern.html" class = "button">Acknowledgements</a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class = "header" id = "h">	  
+	</div>
+	<p id = "h2" class = "p"></p> 
+	<br>
+	<br>
+	<br>
+		
+	<img align = "right" src = "../Other Images/craneIcon.png" Width = "400" Height = "400"> 
+	<div class = "bodyLeft">
+	<h1>What is Origami?</h1>
+	<br>
+	Origami is the Japanese art of paper folding.
+	<br>
+	The name comes from the japanese words 
+	<br>
+	"ori", meaning folding, and "kami", meaning paper.
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<img align = "left" src = "../Other Images/dragonIcon.png" Width = "700" Height = "400"> 
+	<div class = "bodyRight">
+	<h1>Explore and Create.</h1>
+	<br>
+	This website is dedicated to easy tutorials
+	<br>
+	on creating simple and cool origami pieces.
+	<br>
+	Start exploring the tutorials now to learn!
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<img align = "right" src = "../Other Images/colorIcon.png" Width = "400" Height = "400"> 
+	<div class = "bodyLeft">
+	<h1>Try Different Themes.</h1>
+	<br>
+	This website comes with a few different
+	<br>
+	themes. Try them out and find a theme
+	<br>
+	you like!
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class = "endPage">
+	<img src = "../Other Images/logo.png" onClick = "location.href = 'Origami Website modern.html';"class = "image" align = "center-left">
+	<br>
+	Origami  Website.html - 2019  |  Made  by  Yash  Anand
+	</div>
+
+	<script>
+	var i = 0;
+	var text = "Welcome to Origami"
+	var text2 = "Simple.  Creative.  Fun."
+	var speed = 75;
+	
+	function type()
+	{
+		if(i < text.length)
+		{
+			h.innerHTML += text.charAt(i);
+			i++;
+		    setTimeout(type, speed);	
+		}
+		else
+		{
+			i = 0;
+			setTimeout(type2, 500);
+			
+		}
+	}
+	
+	function type2()
+	{
+		if(i < text2.length)
+		{
+			h2.innerHTML += text2.charAt(i);
+			i++;
+		    setTimeout(type2, 50);	
+		}
+	}
+	
+	type();
+	
+	function darkTheme()
+	{
+		theme.href = "origami dark.css" 
+	}
+	
+	</script>	
+</body>
+</html>
